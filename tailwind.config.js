@@ -31,7 +31,7 @@ module.exports = {
         "7xl": ["4.5rem", { lineHeight: "1", letterSpacing: "-0.0268em" }],
       },
       animation: {
-        shine: "shine 5s ease-in-out 500ms infinite",
+        shine: "shine 5s ease-in-out 100ms infinite",
       },
       keyframes: {
         shine: {

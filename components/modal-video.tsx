@@ -51,12 +51,11 @@ export default function ModalVideo({
           setModalOpen(true);
         }}
         aria-label="Watch the video"
-        data-aos="fade-up"
         data-aos-delay={200}
       >
-        <figure className="relative overflow-hidden rounded-2xl before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-br before:from-gray-900 before:via-indigo-500/20 before:to-gray-900">
+        <figure className="relative overflow-hidden rounded-2xl before:absolute before:inset-0 before:-z-10  before:from-gray-900 before:via-indigo-500/20 before:to-gray-900">
           <Image
-            className="opacity-50 grayscale"
+            className="grayscale"
             src={thumb}
             width={thumbWidth}
             height={thumbHeight}
@@ -94,9 +93,9 @@ export default function ModalVideo({
               </defs>
             </svg>
             <span className="text-sm font-medium leading-tight text-gray-300">
-              Watch Demo
-              <span className="text-gray-600"> - </span>
-              3:47
+              Play video
+              <span className="text-gray-600"> </span>
+              
             </span>
           </span>
         </span>
@@ -122,8 +121,9 @@ export default function ModalVideo({
                 ref={videoRef}
                 width={videoWidth}
                 height={videoHeight}
-                loop
-                controls
+                controls={false} // Remove default controls
+                onEnded={() => setModalOpen(false)} // Close modal when video ends
+                autoPlay // Automatically play the video
               >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
